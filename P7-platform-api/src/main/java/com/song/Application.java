@@ -11,7 +11,7 @@ import org.springframework.context.ApplicationContext;
  * @Created by Jeremy
  */
 @SpringBootApplication
-@MapperScan(basePackages = "com.song.p7.platform.mapper")
+@MapperScan(basePackages = "com.song")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

@@ -12,7 +12,7 @@ spring:
   datasource:
     #postgresql配置
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/P7-platform?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+    url: jdbc:mysql://localhost:3306/p7-platform?useUnicode=true&characterEncoding=UTF-8&autoReconnect
     username: root
     password: root
 
@@ -42,6 +42,13 @@ spring:
     #合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
 
+#  data:
+#    #jackson
+#    jackson:
+#      deserialization:
+#        #@RequestBody中是否允许不存在的属性
+#        fail-on-unknown-properties: true
+#      default-property-inclusion: NON_NULL
 
 ############################################################
 #
@@ -49,5 +56,21 @@ spring:
 #
 ############################################################
 mybatis:
-  type-aliases-package: com.song.pojo # 所有POJO类所在包路径
+  type-aliases-package: com.song.p7.platform.pojo # 所有POJO类所在包路径
+  configuration:
+    lazy-load-trigger-methods:
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
   mapper-locations: classpath:mapper/*.xml # mapper映射文件
+
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
+# SWAGGER UI
+swagger-ui:
+  enabled: true
