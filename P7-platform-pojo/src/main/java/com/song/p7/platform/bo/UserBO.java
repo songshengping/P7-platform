@@ -17,15 +17,15 @@ import java.util.Date;
 public class UserBO {
 
     @ApiModelProperty(value = "登录名")
-    @JsonProperty(value = "username")
+    @JsonProperty(value = "username", required = true)
     private String username;
 
     @ApiModelProperty(value = "密码")
-    @JsonProperty(value = "password")
+    @JsonProperty(value = "password", required = true)
     private String password;
 
     @ApiModelProperty(value = "确认密码")
-    @JsonProperty(value = "confirmPassword")
+    @JsonProperty(value = "confirmPassword", required = true)
     private String confirmPassword;
 
     @ApiModelProperty(value = "昵称")
@@ -33,7 +33,7 @@ public class UserBO {
     private String nickname;
 
     @ApiModelProperty(value = "真实姓名")
-    @JsonProperty(value = "realname")
+    @JsonProperty(value = "realname", required = true)
     private String realname;
 
     @ApiModelProperty(value = "头像")
@@ -49,7 +49,7 @@ public class UserBO {
     private String email;
 
     @ApiModelProperty(value = "性别")
-    @JsonProperty(value = "sex")
+    @JsonProperty(value = "sex", required = true)
     private Integer sex;
 
     @ApiModelProperty(value = "生日(yyyy-MM-dd)")

@@ -12,12 +12,12 @@
     <result column="detail" jdbcType="VARCHAR" property="detail" />
     <result column="extand" jdbcType="VARCHAR" property="extand" />
     <result column="is_default" jdbcType="INTEGER" property="isDefault" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, user_id, receiver, mobile, province, city, district, detail, extand, is_default, 
-    created_time, updated_time
+    create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -36,7 +36,7 @@
     insert into user_address (user_id, receiver, mobile, 
       province, city, district, 
       detail, extand, is_default, 
-      created_time, updated_time)
+      create_time, update_time)
     values (#{userId,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
       #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR}, 
       #{detail,jdbcType=VARCHAR}, #{extand,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}, 
@@ -76,10 +76,10 @@
         is_default,
       </if>
       <if test="createTime != null">
-        created_time,
+        create_time,
       </if>
       <if test="updateTime != null">
-        updated_time,
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -149,10 +149,10 @@
         is_default = #{isDefault,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        created_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        updated_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -168,8 +168,8 @@
       detail = #{detail,jdbcType=VARCHAR},
       extand = #{extand,jdbcType=VARCHAR},
       is_default = #{isDefault,jdbcType=INTEGER},
-      created_time = #{createTime,jdbcType=TIMESTAMP},
-      updated_time = #{updateTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

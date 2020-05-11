@@ -2,6 +2,8 @@ server:
   port: 8088
   tomcat:
     uri-encoding: UTF-8
+  servlet:
+    context-path: /P7-platform
 ############################################################
 #
 # 配置数据源信息

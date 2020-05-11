@@ -9,12 +9,12 @@
     <result column="discounts" jdbcType="DECIMAL" property="discounts" />
     <result column="price_discount" jdbcType="INTEGER" property="priceDiscount" />
     <result column="price_normal" jdbcType="INTEGER" property="priceNormal" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, item_id, name, stock, discounts, price_discount, price_normal, created_time, 
-    updated_time
+    id, item_id, name, stock, discounts, price_discount, price_normal, create_time,
+    update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -32,7 +32,7 @@
     </selectKey>
     insert into items_spec (item_id, name, stock, 
       discounts, price_discount, price_normal, 
-      created_time, updated_time)
+      create_time, update_time)
     values (#{itemId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{stock,jdbcType=INTEGER}, 
       #{discounts,jdbcType=DECIMAL}, #{priceDiscount,jdbcType=INTEGER}, #{priceNormal,jdbcType=INTEGER}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
@@ -62,10 +62,10 @@
         price_normal,
       </if>
       <if test="createTime != null">
-        created_time,
+        create_time,
       </if>
       <if test="updateTime != null">
-        updated_time,
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -117,10 +117,10 @@
         price_normal = #{priceNormal,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        created_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        updated_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -133,8 +133,8 @@
       discounts = #{discounts,jdbcType=DECIMAL},
       price_discount = #{priceDiscount,jdbcType=INTEGER},
       price_normal = #{priceNormal,jdbcType=INTEGER},
-      created_time = #{createTime,jdbcType=TIMESTAMP},
-      updated_time = #{updateTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

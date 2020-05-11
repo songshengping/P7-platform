@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 .forCodeGeneration(true)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dclingcloud.npm.controller"))//自行修改为自己的包路径
+                .apis(RequestHandlerSelectors.basePackage("com.song.p7.platform.controller"))//自行修改为自己的包路径
                 .paths(PathSelectors.any())//对所有路径进行监控
                 .build()
                 .securitySchemes(Lists.newArrayList(apiKey())) //配置输入认证
@@ -64,7 +64,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("新版NPM API 接口文档")
+                .title("API 接口文档")
                 .description("restful 风格接口")
                 .version("1.0")
                 .build();

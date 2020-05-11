@@ -12,12 +12,12 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="birthday" jdbcType="DATE" property="birthday" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, password, nickname, realname, face, mobile, email, sex, birthday, created_time, 
-    updated_time
+    id, username, password, nickname, realname, face, mobile, email, sex, birthday, create_time,
+    update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -36,7 +36,7 @@
     insert into users (username, password, nickname, 
       realname, face, mobile, 
       email, sex, birthday, 
-      created_time, updated_time)
+      create_time, update_time)
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{realname,jdbcType=VARCHAR}, #{face,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{birthday,jdbcType=DATE}, 
@@ -76,10 +76,10 @@
         birthday,
       </if>
       <if test="createTime != null">
-        created_time,
+        create_time,
       </if>
       <if test="updateTime != null">
-        updated_time,
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -149,10 +149,10 @@
         birthday = #{birthday,jdbcType=DATE},
       </if>
       <if test="createTime != null">
-        created_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        updated_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -168,8 +168,8 @@
       email = #{email,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=INTEGER},
       birthday = #{birthday,jdbcType=DATE},
-      created_time = #{createTime,jdbcType=TIMESTAMP},
-      updated_time = #{updateTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 

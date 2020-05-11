@@ -13,12 +13,12 @@
     <result column="weight" jdbcType="VARCHAR" property="weight" />
     <result column="storage_method" jdbcType="VARCHAR" property="storageMethod" />
     <result column="eat_method" jdbcType="VARCHAR" property="eatMethod" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, item_id, produc_place, foot_period, brand, factory_name, factory_address, packaging_method, 
-    weight, storage_method, eat_method, created_time, updated_time
+    weight, storage_method, eat_method, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -37,7 +37,7 @@
     insert into items_param (item_id, produc_place, foot_period, 
       brand, factory_name, factory_address, 
       packaging_method, weight, storage_method, 
-      eat_method, created_time, updated_time
+      eat_method, create_time, update_time
       )
     values (#{itemId,jdbcType=VARCHAR}, #{producPlace,jdbcType=VARCHAR}, #{footPeriod,jdbcType=VARCHAR}, 
       #{brand,jdbcType=VARCHAR}, #{factoryName,jdbcType=VARCHAR}, #{factoryAddress,jdbcType=VARCHAR}, 
@@ -82,10 +82,10 @@
         eat_method,
       </if>
       <if test="createTime != null">
-        created_time,
+        create_time,
       </if>
       <if test="updateTime != null">
-        updated_time,
+        update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -161,10 +161,10 @@
         eat_method = #{eatMethod,jdbcType=VARCHAR},
       </if>
       <if test="createTime != null">
-        created_time = #{createTime,jdbcType=TIMESTAMP},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updateTime != null">
-        updated_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -181,8 +181,8 @@
       weight = #{weight,jdbcType=VARCHAR},
       storage_method = #{storageMethod,jdbcType=VARCHAR},
       eat_method = #{eatMethod,jdbcType=VARCHAR},
-      created_time = #{createTime,jdbcType=TIMESTAMP},
-      updated_time = #{updateTime,jdbcType=TIMESTAMP}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>
