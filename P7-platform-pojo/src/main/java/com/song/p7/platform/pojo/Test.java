@@ -1,5 +1,6 @@
 package com.song.p7.platform.pojo;
 
+import com.song.p7.platform.base.TimeStampDB;
 import lombok.Getter;
 import lombok.Setter;
 

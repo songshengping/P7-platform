@@ -1,5 +1,6 @@
 package com.song.p7.platform.pojo;
 
+import com.song.p7.platform.base.TimeStampDB;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,12 +11,12 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class OrderStatus implements Serializable {
+public class OrderStatus extends TimeStampDB implements Serializable {
     private String orderId;
 
     private Integer orderStatus;
 
-    private Date createdTime;
+    private Date createTime;
 
     private Date payTime;
 

@@ -1,5 +1,6 @@
 package com.song.p7.platform.pojo;
 
+import com.song.p7.platform.base.TimeStampDB;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +10,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class Category implements Serializable {
+public class Category extends TimeStampDB implements Serializable {
     private Integer id;
 
     private String name;

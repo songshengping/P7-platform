@@ -1,5 +1,6 @@
 package com.song.p7.platform.pojo;
 
+import com.song.p7.platform.base.TimeStampDB;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Items implements Serializable {
+public class Items extends TimeStampDB implements Serializable {
     private String id;
 
     private String itemName;
@@ -22,10 +23,6 @@ public class Items implements Serializable {
     private Integer sellCounts;
 
     private Integer onOffStatus;
-
-    private Date createdTime;
-
-    private Date updatedTime;
 
     private String content;
 

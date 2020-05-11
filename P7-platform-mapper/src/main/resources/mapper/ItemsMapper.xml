@@ -8,8 +8,8 @@
     <result column="root_cat_id" jdbcType="INTEGER" property="rootCatId" />
     <result column="sell_counts" jdbcType="INTEGER" property="sellCounts" />
     <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.song.p7.platform.pojo.Items">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
@@ -40,8 +40,8 @@
       sell_counts, on_off_status, created_time, 
       updated_time, content)
     values (#{itemName,jdbcType=VARCHAR}, #{catId,jdbcType=INTEGER}, #{rootCatId,jdbcType=INTEGER}, 
-      #{sellCounts,jdbcType=INTEGER}, #{onOffStatus,jdbcType=INTEGER}, #{createdTime,jdbcType=TIMESTAMP}, 
-      #{updatedTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+      #{sellCounts,jdbcType=INTEGER}, #{onOffStatus,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.song.p7.platform.pojo.Items">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
@@ -64,10 +64,10 @@
       <if test="onOffStatus != null">
         on_off_status,
       </if>
-      <if test="createdTime != null">
+      <if test="createTime != null">
         created_time,
       </if>
-      <if test="updatedTime != null">
+      <if test="updateTime != null">
         updated_time,
       </if>
       <if test="content != null">
@@ -90,11 +90,11 @@
       <if test="onOffStatus != null">
         #{onOffStatus,jdbcType=INTEGER},
       </if>
-      <if test="createdTime != null">
-        #{createdTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatedTime != null">
-        #{updatedTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null">
         #{content,jdbcType=LONGVARCHAR},
@@ -119,11 +119,11 @@
       <if test="onOffStatus != null">
         on_off_status = #{onOffStatus,jdbcType=INTEGER},
       </if>
-      <if test="createdTime != null">
-        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        created_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatedTime != null">
-        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        updated_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="content != null">
         content = #{content,jdbcType=LONGVARCHAR},
@@ -138,8 +138,8 @@
       root_cat_id = #{rootCatId,jdbcType=INTEGER},
       sell_counts = #{sellCounts,jdbcType=INTEGER},
       on_off_status = #{onOffStatus,jdbcType=INTEGER},
-      created_time = #{createdTime,jdbcType=TIMESTAMP},
-      updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      created_time = #{createTime,jdbcType=TIMESTAMP},
+      updated_time = #{updateTime,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -150,8 +150,8 @@
       root_cat_id = #{rootCatId,jdbcType=INTEGER},
       sell_counts = #{sellCounts,jdbcType=INTEGER},
       on_off_status = #{onOffStatus,jdbcType=INTEGER},
-      created_time = #{createdTime,jdbcType=TIMESTAMP},
-      updated_time = #{updatedTime,jdbcType=TIMESTAMP}
+      created_time = #{createTime,jdbcType=TIMESTAMP},
+      updated_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

@@ -10,8 +10,8 @@
     <result column="sepc_name" jdbcType="VARCHAR" property="sepcName" />
     <result column="comment_level" jdbcType="INTEGER" property="commentLevel" />
     <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
-    <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="updated_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <sql id="Base_Column_List">
     id, user_id, item_id, item_name, item_spec_id, sepc_name, comment_level, content, 
@@ -37,7 +37,7 @@
       )
     values (#{userId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, 
       #{itemSpecId,jdbcType=VARCHAR}, #{sepcName,jdbcType=VARCHAR}, #{commentLevel,jdbcType=INTEGER}, 
-      #{content,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP}
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.song.p7.platform.pojo.ItemsComments">
@@ -67,10 +67,10 @@
       <if test="content != null">
         content,
       </if>
-      <if test="createdTime != null">
+      <if test="createTime != null">
         created_time,
       </if>
-      <if test="updatedTime != null">
+      <if test="updateTime != null">
         updated_time,
       </if>
     </trim>
@@ -96,11 +96,11 @@
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
       </if>
-      <if test="createdTime != null">
-        #{createdTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatedTime != null">
-        #{updatedTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -128,11 +128,11 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
-      <if test="createdTime != null">
-        created_time = #{createdTime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        created_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updatedTime != null">
-        updated_time = #{updatedTime,jdbcType=TIMESTAMP},
+      <if test="updateTime != null">
+        updated_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
@@ -146,8 +146,8 @@
       sepc_name = #{sepcName,jdbcType=VARCHAR},
       comment_level = #{commentLevel,jdbcType=INTEGER},
       content = #{content,jdbcType=VARCHAR},
-      created_time = #{createdTime,jdbcType=TIMESTAMP},
-      updated_time = #{updatedTime,jdbcType=TIMESTAMP}
+      created_time = #{createTime,jdbcType=TIMESTAMP},
+      updated_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>
