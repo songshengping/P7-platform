@@ -17,4 +17,5 @@ public class Constant {
     public static final String URL_TOKEN = "token";
 
     public static final String DEFAULT_FACE_URL = "";
+
 }

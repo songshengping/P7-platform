@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /P7-platform
+spring:
+  thymeleaf:
+    cache: false  #缓存是否开启
+    encoding: UTF-8 #编码格式
+    mode: LEGACYHTML5 #去除对html的严格校验
+    suffix: .html
+    prefix: classpath:/templates/
+
+  messages:
+    basename: i18n
+    encoding: UTF-8
+
+  resources:
+    static-locations: classpath:/static/

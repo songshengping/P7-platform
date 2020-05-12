@@ -44,6 +44,19 @@ spring:
     #合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
 
+  thymeleaf:
+    cache: false  #缓存是否开启
+    encoding: UTF-8 #编码格式
+    mode: LEGACYHTML5 #去除对html的严格校验
+    suffix: .html
+    prefix: classpath:/templates/
+
+    messages:
+      basename: i18n
+      encoding: UTF-8
+
+    resources:
+      static-locations: classpath:/static/
 #  data:
 #    #jackson
 #    jackson:

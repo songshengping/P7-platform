@@ -14,6 +14,7 @@
         <module>P7-platform-mapper</module>
         <module>P7-platform-service</module>
         <module>P7-platform-api</module>
+        <module>P7-platform-ui</module>
     </modules>
 
     <packaging>pom</packaging>
