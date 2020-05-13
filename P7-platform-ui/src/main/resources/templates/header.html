@@ -3,7 +3,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <h1>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-ravelry" aria-hidden="true"></i></a>
+                <a class="navbar-brand" href="index"><i class="fa fa-ravelry" aria-hidden="true"></i></a>
             </h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -12,16 +12,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-4 m-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" th:href="@{about.html}" th:text = "#{common.about_us}">关于我们</a>
+                        <a class="nav-link" th:href="about" th:text = "#{common.about_us}">关于我们</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="moreinfo" aria-haspopup="true" aria-expanded="false">
                             <span th:text = "#{common.more_info}">菜单1</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="features.html" th:text = "#{common.more_info.features}">更多菜单1</a>
-                            <a class="dropdown-item" href="blogs.html" th:text = "#{common.more_info.blogs}">更多菜单2</a>
-                            <a class="dropdown-item" href="features.html" th:text = "#{common.more_info.servers}">更多菜单3</a>
+                            <a class="dropdown-item" href="features" th:text = "#{common.more_info.features}">更多菜单1</a>
+                            <a class="dropdown-item" href="blogs" th:text = "#{common.more_info.blogs}">更多菜单2</a>
+                            <a class="dropdown-item" href="features" th:text = "#{common.more_info.servers}">更多菜单3</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -29,26 +29,26 @@
                             <span th:text = "#{common.dropdown}">菜单2</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="features.html" th:text = "#{common.dropdown.features}">更多菜单1</a>
-                            <a class="dropdown-item" href="blogs.html" th:text = "#{common.dropdown.blogs}">更多菜单2</a>
-                            <a class="dropdown-item" href="features.html" th:text = "#{common.dropdown.servers}">更多菜单3</a>
+                            <a class="dropdown-item" href="features" th:text = "#{common.dropdown.features}">更多菜单1</a>
+                            <a class="dropdown-item" href="blogs" th:text = "#{common.dropdown.blogs}">更多菜单2</a>
+                            <a class="dropdown-item" href="features" th:text = "#{common.dropdown.servers}">更多菜单3</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" th:text = "#{common.contact}">Contact</a>
+                        <a class="nav-link" href="contact" th:text = "#{common.contact}">Contact</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" th:text = "#{common.contact}">Contact</a>
+                        <a class="nav-link" href="contact" th:text = "#{common.contact}">Contact</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" th:text = "#{common.contact}">Contact</a>
+                        <a class="nav-link" href="contact" th:text = "#{common.contact}">Contact</a>
                     </li>
                 </ul>
                 <div class="header-right  ml-4 m-auto">
-                    <a href="signin.html" class="signin mr-4"  th:text = "#{common.sign_in}"> Sign in <i class="fas fa-sign-in-alt"></i></a>
-                    <a href="register.html" class="contact" th:text = "#{common.register}">Get Started</a>
+                    <a href="signin" class="signin mr-4"  th:text = "#{common.sign_in}"> Sign in <i class="fas fa-sign-in-alt"></i></a>
+                    <a href="register" class="contact" th:text = "#{common.register}">Get Started</a>
                 </div>
                 <div class="header-right  mr-4">
                     <select id = "language_change" onchange="changeLanguage()">
@@ -74,5 +74,8 @@
         });
     }
 
+    function htmlToHtml(htmlName){
+
+    }
 </script>
 <!-- //header -->

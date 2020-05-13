@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>About</title>
@@ -18,17 +18,21 @@
 
     </script>
     <!-- //Meta tag Keywords -->
-
+    <!--//Register-->
+    <script th:src ="@{/js/jquery-2.2.3.min.js}"></script>
+    <!--/aos -->
+    <script th:src ="@{/js/aos.js}"></script>
+    <script th:src ="@{/js/common.js}"></script>
     <!-- Custom-Files -->
     <link rel="stylesheet" th:href ="@{/css/bootstrap.css}">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" th:href ="@{/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" th:href ="@{/css/style.css}" type="text/css" media="all" />
     <link rel="stylesheet" th:href ="@{/css/portfolio.css}">
     <link rel="stylesheet" th:href ="@{/css/aos.css}">
     <link href='css/aos-animation.css' rel='stylesheet prefetch' type="text/css" media="all" />
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
-    <link th:href ="@{/css/font-awesome.css" rel="stylesheet">
+    <link th:href ="@{/css/font-awesome.css}" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <!-- /Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
@@ -41,53 +45,7 @@
     <!-- mian-content -->
     <div class="main-content" id="home">
         <!-- header -->
-        <header class="py-1">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <h1>
-                        <a class="navbar-brand" href="index.html"><i class="fa fa-ravelry" aria-hidden="true"></i></a>
-                    </h1>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-4 m-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="about.html">About Us <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  More info <i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="features.html">Features</a>
-                                    <a class="dropdown-item" href="blogs.html">Blogs</a>
-                                    <a class="dropdown-item" href="features.html">Services</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Dropdown <i class="fa fa-angle-down" aria-hidden="true"></i>
-					</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="gallery.html">Gallery</a>
-                                    <a class="dropdown-item" href="about.html">About Us</a>
-                                    <a class="dropdown-item" href="single.html">Single</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                        </ul>
-                        <div class="header-right">
-                            <a href="signin.html" class="signin mr-4"> Sign in <i class="fas fa-sign-in-alt"></i></a>
-                            <a href="register.html" class="contact">Get Started</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        <div th:include="header"></div>
         <!-- //header -->
     </div>
     <!--/ab -->

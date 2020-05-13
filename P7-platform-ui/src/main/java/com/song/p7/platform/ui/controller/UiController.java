@@ -28,4 +28,45 @@ public class UiController {
         return "index";
     }
 
+
+    @GetMapping(value = "/register")
+    public String registerThymeleafPage(ModelMap modelMap){
+        return "register";
+    }
+
+    @GetMapping(value = "/signin")
+    public String signinThymeleafPage(ModelMap modelMap){
+        return "signin";
+    }
+
+    @GetMapping(value = "/about")
+    public String aboutThymeleafPage(ModelMap modelMap){
+        return "about";
+    }
+
+    @GetMapping(value = "/contact")
+    public String contactThymeleafPage(ModelMap modelMap){
+        return "contact";
+    }
+
+    @GetMapping(value = "/blogs")
+    public String blogsThymeleafPage(ModelMap modelMap){
+        return "blogs";
+    }
+
+    @GetMapping(value = "/features")
+    public String featuresThymeleafPage(ModelMap modelMap){
+        return "features";
+    }
+
+    @GetMapping(value = "/gallery")
+    public String galleryThymeleafPage(ModelMap modelMap){
+        return "gallery";
+    }
+    @GetMapping(value = "/single")
+    public String singleThymeleafPage(ModelMap modelMap){
+        return "single";
+    }
+
+
 }
