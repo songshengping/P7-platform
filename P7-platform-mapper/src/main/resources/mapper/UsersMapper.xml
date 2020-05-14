@@ -29,11 +29,8 @@
     delete from users
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.song.p7.platform.pojo.Users">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      select currval('users_id_seq')
-    </selectKey>
-    insert into users (username, password, nickname, 
+  <insert id="insert" parameterType="com.song.p7.platform.pojo.Users" useGeneratedKeys="true" keyProperty="id">
+    insert into users (username, password, nickname,
       realname, face, mobile, 
       email, sex, birthday, 
       create_time, update_time)

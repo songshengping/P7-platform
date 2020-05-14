@@ -25,11 +25,11 @@ public class UserBO {
     private String password;
 
     @ApiModelProperty(value = "确认密码")
-    @JsonProperty(value = "confirmPassword", required = true)
+    @JsonProperty(value = "confirm_password", required = true)
     private String confirmPassword;
 
     @ApiModelProperty(value = "昵称")
-    @JsonProperty(value = "nickname")
+    @JsonProperty(value = "nick_name")
     private String nickname;
 
     @ApiModelProperty(value = "真实姓名")
@@ -41,15 +41,15 @@ public class UserBO {
     private String face;
 
     @ApiModelProperty(value = "手机号")
-    @JsonProperty(value = "mobile")
+    @JsonProperty(value = "mobile", required = true)
     private String mobile;
 
     @ApiModelProperty(value = "邮箱")
-    @JsonProperty(value = "email")
+    @JsonProperty(value = "email", required = true)
     private String email;
 
     @ApiModelProperty(value = "性别")
-    @JsonProperty(value = "sex", required = true)
+    @JsonProperty(value = "sex")
     private Integer sex;
 
     @ApiModelProperty(value = "生日(yyyy-MM-dd)")

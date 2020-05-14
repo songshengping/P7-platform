@@ -6,6 +6,7 @@ import com.song.p7.platform.pojo.Users;
 import com.song.p7.platform.transform.UserTransMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 
@@ -24,6 +25,7 @@ public class UserService {
         return usersMapper.findUserByUsername(username).isEmpty();
     }
 
+    @Transactional()
     public boolean createUser(UserBO userBO){
         Users user = UserTransMapper.INSTANCE.toPojo(userBO);
         return usersMapper.insert(user) > 0;

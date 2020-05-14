@@ -4,6 +4,7 @@ import com.song.p7.platform.bo.UserBO;
 import com.song.p7.platform.service.UserService;
 import com.song.p7.platform.utils.APIErrorCode;
 import com.song.p7.platform.utils.APIResponse;
+import com.song.p7.platform.utils.ValidateUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
@@ -38,6 +39,29 @@ public class UserController {
     @ApiOperation(value = "用户注册", notes = "用户注册")
     public APIResponse<Boolean> usernameIsExist(@RequestBody UserBO user){
         // 校验参数
+
+        /**
+         * 1. 邮箱校验
+         */
+        if (!ValidateUtils.isEmail(user.getEmail())) {
+            return new APIResponse<>(APIErrorCode.EMAIL_ERROR);
+        }
+
+        /**
+         * 2. 密码校验
+         */
+        if (!StringUtils.equals(user.getPassword(), user.getConfirmPassword())) {
+            return new APIResponse<>(APIErrorCode.USER_PASSOWRD_NOT_SAME);
+        }
+
+        /**
+         * 3. 用户名是否存在
+         */
+        if (!userService.usernameIsExist(user.getUsername())) {
+            return new APIResponse<>(APIErrorCode.USER_EXIST);
+        }
+
+
         return new APIResponse<>(userService.createUser(user));
     }
 }
