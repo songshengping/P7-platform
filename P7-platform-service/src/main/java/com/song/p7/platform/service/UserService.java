@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @Description TODO
@@ -22,12 +23,17 @@ public class UserService {
     private UsersMapper usersMapper;
 
     public boolean usernameIsExist(String username){
-        return usersMapper.findUserByUsername(username).isEmpty();
+        return !usersMapper.findUserByUsername(username).isEmpty();
     }
 
-    @Transactional()
+    @Transactional
     public boolean createUser(UserBO userBO){
         Users user = UserTransMapper.INSTANCE.toPojo(userBO);
         return usersMapper.insert(user) > 0;
+    }
+
+    public Users findUserByUsername(String username) {
+        List<Users> usersList = usersMapper.findUserByUsername(username);
+        return usersList.isEmpty() ? null : usersList.iterator().next();
     }
 }

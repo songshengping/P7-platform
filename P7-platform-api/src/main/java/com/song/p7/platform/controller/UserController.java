@@ -1,6 +1,7 @@
 package com.song.p7.platform.controller;
 
 import com.song.p7.platform.bo.UserBO;
+import com.song.p7.platform.pojo.Users;
 import com.song.p7.platform.service.UserService;
 import com.song.p7.platform.utils.APIErrorCode;
 import com.song.p7.platform.utils.APIResponse;
@@ -57,11 +58,26 @@ public class UserController {
         /**
          * 3. 用户名是否存在
          */
-        if (!userService.usernameIsExist(user.getUsername())) {
+        if (userService.usernameIsExist(user.getUsername())) {
             return new APIResponse<>(APIErrorCode.USER_EXIST);
         }
 
-
         return new APIResponse<>(userService.createUser(user));
     }
+
+    @GetMapping(value = "/login")
+    public APIResponse<Boolean> login(@RequestParam(value = "username", name = "username")String username,
+                                      @RequestParam(value = "password", name = "password")String password){
+        Users user = userService.findUserByUsername(username);
+        if (user == null) {
+            return new APIResponse<>(APIErrorCode.USER_USERNAME_PASSWORD_ERROR);
+        }
+
+        if (!password.equals(user.getPassword())) {
+            return new APIResponse<>(APIErrorCode.USER_USERNAME_PASSWORD_ERROR);
+        }
+
+        return null;
+    }
+
 }

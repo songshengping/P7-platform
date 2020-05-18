@@ -202,6 +202,8 @@ public enum APIErrorCode {
 	FILE_HEAD_ERROR						(37002,"file.head.error"),
 	FILE_DATA_NOT_FOUND					(37003,"file.data.not.found"),
 
+	/** 800给老婆的测试 */
+	TEST_NOT_EXIST                  (80000,"test.not.exist"),
 	EMAIL_ERROR						(400000,"email.error"),
 	/** 99999未知 */
 	UNKNOWN_ERROR						(99999, "未知错误");
@@ -222,6 +224,20 @@ public enum APIErrorCode {
 		this.code = code;
 		this.description = description;
 		this.placeholder = placeholder;
+	}
+
+	/**
+	 * 根据code获取对应的枚举
+	 *
+	 * @param  code    枚举的code值
+	 * */
+	public static APIErrorCode convertEnumByCode(int code) {
+		for(APIErrorCode e : APIErrorCode.values()) {
+			if(e.getCode() == code) {
+				return e;
+			}
+		}
+		return null;
 	}
 	
 }

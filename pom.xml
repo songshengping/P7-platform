@@ -15,6 +15,7 @@
         <module>P7-platform-service</module>
         <module>P7-platform-api</module>
         <module>P7-platform-ui</module>
+        <module>P7-platfrom-test</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -36,6 +37,14 @@
     </properties>
 
     <dependencies>
+
+        <!--  Spring Boot 直接输出到Logstash   -->
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>6.3</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.commons</groupId>
