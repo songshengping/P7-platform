@@ -18,10 +18,7 @@
     delete from test
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.song.p7.platform.pojo.Test">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      select currval('test_id_seq')
-    </selectKey>
+  <insert id="insert" parameterType="com.song.p7.platform.pojo.Test"  useGeneratedKeys="true" keyProperty="id">
     insert into test (name)
     values (#{name,jdbcType=VARCHAR})
   </insert>
@@ -55,4 +52,41 @@
     set name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from test
+  </select>
+
+  <select id="findTestByName" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from test
+    where name like concat ('%',#{name,jdbcType=VARCHAR},'%')
+  </select>
+  <select id="findTestBySlective" resultType="com.song.p7.platform.pojo.Test">
+    select
+    <include refid="Base_Column_List"/>
+    from test
+    where 1=1
+    <if test="id != null">
+      and id = #{id,jdbcType=INTEGER}
+    </if>
+    <if test="name != null">
+      and name = #{name,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <select id="findTestByParam" resultType="com.song.p7.platform.pojo.Test">
+    select
+    <include refid="Base_Column_List"/>
+    from test
+    where 1=1
+    <if test="id != null">
+      and id = #{id,jdbcType=INTEGER}
+    </if>
+    <if test="name != null">
+      and name like concat('%',#{name,jdbcType=VARCHAR},'%')
+    </if>
+  </select>
 </mapper>

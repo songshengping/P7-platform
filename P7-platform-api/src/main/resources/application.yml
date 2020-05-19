@@ -76,6 +76,7 @@ mybatis:
     lazy-load-trigger-methods:
     lazy-loading-enabled: true
     aggressive-lazy-loading: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath:mapper/*.xml # mapper映射文件
 
 #pagehelper分页插件
