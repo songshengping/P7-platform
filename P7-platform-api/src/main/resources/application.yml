@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  port: 8082
   tomcat:
     uri-encoding: UTF-8
   servlet:
@@ -14,9 +14,9 @@ spring:
   datasource:
     #postgresql配置
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/p7-platform?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+    url: jdbc:mysql://140.143.18.246:3306/p7-platform?useUnicode=true&characterEncoding=UTF-8&autoReconnect
     username: root
-    password: root
+    password: Songjiang_0702
 
     #使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource

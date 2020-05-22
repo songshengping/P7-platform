@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-05-18T23:26:27+0800",
+    date = "2020-05-19T11:49:29+0800",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 1.8.0_131 (Oracle Corporation)"
 )
 public class TestTransMapperImpl implements TestTransMapper {

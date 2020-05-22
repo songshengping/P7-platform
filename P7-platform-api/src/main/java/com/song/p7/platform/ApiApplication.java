@@ -1,9 +1,8 @@
-package com.song;
+package com.song.p7.platform;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -16,8 +15,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @MapperScan(basePackages = "com.song")
 @EnableTransactionManagement
 @EnableSwagger2
-public class Application {
+public class ApiApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ApiApplication.class, args);
     }
 }
